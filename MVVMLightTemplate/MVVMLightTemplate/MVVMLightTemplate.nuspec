@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Xamarin.Forms.MVVMLightTemplate</id>
+    <version>1.0.1</version>
+    <title>Xamarin.Forms.MVVMLightTemplate</title>
+    <authors>Mohamed Ali NOUIRA</authors>
+    <owners>Mohamed Ali NOUIRA</owners>
+    <licenseUrl>https://marketplace.visualstudio.com/items?itemName=mohamedalinouira.XamarinFormsTemplates</licenseUrl>
+    <projectUrl>https://marketplace.visualstudio.com/items?itemName=mohamedalinouira.XamarinFormsTemplates</projectUrl>
+    <iconUrl>https://mohamedalinouira.gallerycdn.vsassets.io/extensions/mohamedalinouira/xamarinformsmvvmlight/1.0.0/1523197843766/Microsoft.VisualStudio.Services.Icons.Default</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Create a Xamarin.Forms project using MVVM design pattern with MVVMLight.</description>
+    <releaseNotes>Xamarin.Forms MVVM MVVMLight Template</releaseNotes>
+    <copyright>Copyright (c) Mohamed Ali NOUIRA. All rights reserved.</copyright>
+    <tags>Xamarin Template Xamarin.Forms MVVM MVVMLight Sweet-MIT</tags>
+
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="CommonServiceLocator" version="2.0.3" exclude="Build,Analyzers" />
+        <dependency id="MvvmLightLibs" version="5.4.1" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms" version="2.5.0.122203" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms.Navigation" version="1.0.1" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms.Popups" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms.ToolKit.Behaviors" version="1.0.2" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms.ToolKit.Controls" version="1.0.2" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms.ToolKit.Converters" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms.ToolKit.Extensions" version="1.0.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    
+    <contentFiles>
+      <files include="any/netstandard2.0/AppResources/Assets/ic_sample.png" buildAction="EmbeddedResource"/>
+      <files include="any/netstandard2.0/AppResources/Localization/Resources.resx" buildAction="EmbeddedResource"/>
+      <files include="any/netstandard2.0/App.xaml" buildAction="Content" />
+      <files include="any/netstandard2.0/Views/HomeView.xaml" buildAction="Content" />
+      <files include="any/netstandard2.0/Views/DetailsView.xaml" buildAction="Content" />
+      <files include="any/netstandard2.0/ViewModels/DetailsViewModel.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/ViewModels/HomeViewModel.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/ViewModels/BaseViewModel.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/ViewModels/ViewModelLocator.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/IViewModels/IDetailsViewModel.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/IViewModels/IHomeViewModel.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/Models/SampleModel.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/Models/User.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/Services/UserServices.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/IServices/IUserServices.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/App.xaml.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/Views/HomeView.xaml.cs" buildAction="Compile" />
+      <files include="any/netstandard2.0/Views/DetailsView.xaml.cs" buildAction="Compile" />
+    </contentFiles>
+    
+  </metadata>
+  
+  <files>
+    <file src="Scripts\Install.ps1" target="tools\Install.ps1" />
+  </files>
+</package>

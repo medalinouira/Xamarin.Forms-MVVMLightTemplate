@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMLightTemplate.Views.DetailsView"
+             Title="{ex:Translate Key=DETAILS_TITLE}"
+             xmlns:b="clr-namespace:Xamarin.Forms.ToolKit.Behaviors;assembly=Xamarin.Forms.ToolKit.Behaviors"            
+             xmlns:ex="clr-namespace:Xamarin.Forms.ToolKit.Extensions;assembly=Xamarin.Forms.ToolKit.Extensions"
+             xmlns:controls="clr-namespace:Xamarin.Forms.ToolKit.Controls;assembly=Xamarin.Forms.ToolKit.Controls"
+             BindingContext="{Binding Details, Source={StaticResource Locator}}">
+
+    <ContentPage.ToolbarItems>
+
+        <controls:HideableToolbarItem IsVisible="True"
+                                      Order="Secondary"                      
+                                      Text="Sample Menu"                     
+                                      Priority="1"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentView ControlTemplate="{StaticResource MyAppTemplate}"
+                 BackgroundColor="White">
+
+        <StackLayout>
+
+            <Label Text="{Binding Path=MySampleModel.Name}"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <ListView VerticalOptions="CenterAndExpand"
+                      HorizontalOptions="CenterAndExpand"
+                      ItemsSource="{Binding Path=MySampleModel.Items}">
+
+                <ListView.Behaviors>
+                    <b:EventToCommandBehavior EventName="ItemTapped"
+                                              Command="{Binding SelectedItemCommand}"
+                                              CommandParameter="{Binding .}"
+                                              EventArgsConverter="{StaticResource SelectedItemConverter}"/>
+
+                </ListView.Behaviors>
+
+            </ListView>
+
+        </StackLayout>
+
+    </ContentView>
+
+</ContentPage>

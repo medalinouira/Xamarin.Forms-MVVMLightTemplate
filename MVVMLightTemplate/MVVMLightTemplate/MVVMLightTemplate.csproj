@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <EnableDefaultXamlItems>false</EnableDefaultXamlItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="App.xaml" />
+    <Content Include="Views\HomeView.xaml" />
+    <Content Include="Views\DetailsView.xaml" />
+
+    <Content Include="ViewModels\DetailsViewModel.cs" />
+    <Content Include="ViewModels\HomeViewModel.cs" />
+    <Content Include="ViewModels\BaseViewModel.cs" />
+    <Content Include="ViewModels\ViewModelLocator.cs" />
+
+    <Content Include="IViewModels\IDetailsViewModel.cs" />
+    <Content Include="IViewModels\IHomeViewModel.cs" />
+
+    <Content Include="Models\SampleModel.cs" />
+    <Content Include="Models\User.cs" />
+
+    <Content Include="Services\UserServices.cs" />
+    <Content Include="IServices\IUserServices.cs" />
+
+    <Content Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Content>
+    <Content Include="Views\HomeView.xaml.cs">
+      <DependentUpon>Views\HomeView.xaml</DependentUpon>
+    </Content>
+    <Content Include="Views\DetailsView.xaml.cs">
+      <DependentUpon>Views\DetailsView.xaml</DependentUpon>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="**\*.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\Install.ps1" />
+    <EmbeddedResource Include="AppResources\Assets\ic_sample.png" />
+    <EmbeddedResource Include="AppResources\Localization\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>  
+    
+  <ItemGroup>
+    <PackageReference Include="CommonServiceLocator" Version="2.0.3" />
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms.Navigation" Version="1.0.1" />
+    <PackageReference Include="Xamarin.Forms.Popups" Version="1.0.0" />
+    <PackageReference Include="Xamarin.Forms.ToolKit.Behaviors" Version="1.0.2" />
+    <PackageReference Include="Xamarin.Forms.ToolKit.Controls" Version="1.0.2" />
+    <PackageReference Include="Xamarin.Forms.ToolKit.Converters" Version="1.0.0" />
+    <PackageReference Include="Xamarin.Forms.ToolKit.Extensions" Version="1.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="**\*.cs" Exclude="**\*.xaml.cs;obj\**;" />
+    <Compile Include="**\*.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+</Project>

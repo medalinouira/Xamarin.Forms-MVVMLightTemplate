@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMLightTemplate.App"             
+             xmlns:vm="clr-namespace:MVVMLightTemplate.ViewModels"
+             xmlns:ex="clr-namespace:Xamarin.Forms.ToolKit.Extensions;assembly=Xamarin.Forms.ToolKit.Extensions"             
+             xmlns:c="clr-namespace:Xamarin.Forms.ToolKit.Converters;assembly=Xamarin.Forms.ToolKit.Converters">
+
+    <Application.Resources>
+
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+
+            <!-- ViewModelLocator -->
+            <vm:ViewModelLocator x:Key="Locator" />
+
+            <!-- Converters -->
+            <c:SelectedItemConverter x:Key="SelectedItemConverter"/>
+
+            <Style x:Key="BtnGray" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="FontFamily" Value="sans-serif"/>
+                <Setter Property="BackgroundColor" Value="#23282d"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="LbCopyRightStyle" TargetType="Label">
+                <Setter Property="Margin" Value="0,-10,0,0"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="TextColor" Value="#23282d"/>
+                <Setter Property="FontFamily" Value="sans-serif"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+            
+            <!-- My App Template -->
+            <ControlTemplate x:Key="MyAppTemplate">
+
+                <StackLayout VerticalOptions="FillAndExpand">
+
+                    <ContentPresenter VerticalOptions="FillAndExpand"/>
+
+                    <Label Text="{ex:Translate Key=COPYRIGHT_TEXT}"
+                           Style="{StaticResource LbCopyRightStyle}"/>
+
+                </StackLayout>
+
+            </ControlTemplate>
+            
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+</Application>
